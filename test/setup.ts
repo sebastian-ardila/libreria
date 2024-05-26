@@ -28,13 +28,11 @@ beforeAll(async () => {
     TRUNCATE TABLE users, libros RESTART IDENTITY CASCADE;
   `);
 
-  // Crear usuario de prueba a través de una solicitud HTTP
   await request(app.getHttpServer())
     .post('/users')
     .send({ username: 'testuser', password: 'password' })
     .expect(201);
 
-  // Autenticar al usuario de prueba para obtener el token JWT
   const loginResponse = await request(app.getHttpServer())
     .post('/auth/login')
     .send({ username: 'testuser', password: 'password' });

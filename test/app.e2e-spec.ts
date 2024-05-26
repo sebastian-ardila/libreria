@@ -33,7 +33,7 @@ describe('Libros API (e2e)', () => {
   });
 
   it('/libros/:id (GET)', async () => {
-    const libroId = 1; // Ajusta el ID según los datos de prueba
+    const libroId = 1;
     const res = await request(server)
       .get(`/libros/${libroId}`)
       .set('Authorization', `Bearer ${jwtToken}`);
@@ -62,7 +62,7 @@ describe('Libros API (e2e)', () => {
   });
 
   it('/libros/:id (PUT)', async () => {
-    const libroId = 1; // Ajusta el ID según los datos de prueba
+    const libroId = 1;
     const actualizacionLibro = {
       titulo: 'Libro Actualizado',
       autor: 'Autor Actualizado',
@@ -80,7 +80,7 @@ describe('Libros API (e2e)', () => {
   });
 
   it('/libros/:id (DELETE)', async () => {
-    const libroId = 1; // Ajusta el ID según los datos de prueba
+    const libroId = 1;
     const res = await request(server)
       .delete(`/libros/${libroId}`)
       .set('Authorization', `Bearer ${jwtToken}`);
