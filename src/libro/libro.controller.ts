@@ -13,14 +13,16 @@ import { CreateLibroDto } from './dto/create-libro.dto';
 import * as DOMPurify from 'dompurify';
 import { JSDOM } from 'jsdom';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 const window = new JSDOM('').window;
 const purify = DOMPurify(window);
 
+@ApiBearerAuth()
+@ApiTags('libros')
 @Controller('libros')
 export class LibroController {
   constructor(private readonly libroService: LibroService) {}
-
   @UseGuards(JwtAuthGuard)
   @Get()
   findAll() {

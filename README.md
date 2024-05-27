@@ -97,6 +97,9 @@ DB_NAME=libreriatest
 
 Esta documentación describe los endpoints de la API para la gestión de usuarios y libros en tu aplicación. Se detallan los formatos de solicitud y respuesta, así como cualquier información adicional necesaria para su uso.
 
+Para ver la informacion generada con swagger puedes ejecutar el proyecto y luego ir a la documentacion usando la siguiente ruta:
+#### [http://localhost:3000/documentation](http://localhost:3000/documentation)
+
 ---
 
 ## **Usuarios**
